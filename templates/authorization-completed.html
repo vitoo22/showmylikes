@@ -8,4 +8,11 @@
 <p>Authorization is now ok</p>
 <p>{{ code }}</p>
 
+{% for item in json_data.data %}
+	<p>**********</p>
+	<p>{{ item.location.latitude }} / {{ item.location.longitude }}</p>
+	<p>{{ item.user.username }} -- {{ item.caption.text }}</p>
+	<img src='{{ item.images.thumbnail.url }}'>
+{% endfor %}
+
 {% endblock content %}
